@@ -8,7 +8,7 @@ function App() {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
-    axios.get("http://localhost:3000", { withCredentials: true }).then((v) => {
+    axios.get("https://express-q3ki.onrender.com/", { withCredentials: true }).then((v) => {
       console.log(v);
     });
   }, []);
