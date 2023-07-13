@@ -6,7 +6,7 @@ import axios from "axios";
 function App() {
   useEffect(() => {
     axios
-      .get("https://express-q3ki.onrender.com", { withCredentials: true })
+      .get("https://express-q3ki.onrender.com/", { withCredentials: true })
       .then((v) => {
         console.log(v);
       });
