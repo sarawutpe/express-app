@@ -1,15 +1,14 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import logo from "./logo.svg";
 import "./App.css";
 import axios from "axios";
 
 function App() {
+  const [cookie, setCookie] = useState("");
   useEffect(() => {
-    axios
-      .get("https://express-q3ki.onrender.com/", { withCredentials: true })
-      .then((v) => {
-        console.log(v);
-      });
+    axios.get("https://expressjs-nine.vercel.app/cookie", { withCredentials: true }).then((v) => {
+      setCookie(v);
+    });
   }, []);
 
   return (
@@ -19,6 +18,7 @@ function App() {
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
+        <p>{cookie}</p>
         <a
           className="App-link"
           href="https://reactjs.org"
