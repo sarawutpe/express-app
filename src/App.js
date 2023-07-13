@@ -6,9 +6,20 @@ import axios from "axios";
 function App() {
   const [cookie, setCookie] = useState("");
   useEffect(() => {
-    axios.get("https://expressjs-nine.vercel.app/cookie", { withCredentials: true }).then((v) => {
-      setCookie(v);
-    });
+    axios
+      .get("https://expressjs-nine.vercel.app/cookie", {
+        withCredentials: true,
+        headers: {
+          Authorization: "Bearer 1234",
+        },
+      })
+      .then((response) => {
+        // Handle the response
+        setCookie(response)
+      })
+      .catch((error) => {
+        // Handle the error
+      });
   }, []);
 
   return (
